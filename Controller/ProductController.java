@@ -46,5 +46,36 @@ public class ProductController extends BaseController {
         
         return this.getWithParameter(map, sql);
     }
+    public ResultSet getById(String id) {
+        String sql = this.query.getById;
+        
+        Map<Integer, Object> map = new HashMap<>();
+        map.put(1, id);
+        
+        return this.getWithParameter(map, sql);
+    }
+    
+    public boolean update(String id, ProductModel model) throws ParseException {
+        
+        Map<Integer, Object> map = new HashMap<>();
+        map.put(1, model.getName());
+        map.put(2, model.getType());
+        map.put(3, model.getStock());
+        map.put(4, model.getPrice());
+        map.put(5, model.getExpired());
+        map.put(6, id);
+        
+        String sql = this.query.update;
+        
+        return this.preparedStatement(map, sql);
+    }
+    
+    public boolean delete(String id) throws ParseException {
+        Map<Integer, Object> map = new HashMap<>();
+        map.put(1, id);
+        
+        String sql = this.query.delete;
+        return this.preparedStatement(map, sql);
+    }
 }
 
