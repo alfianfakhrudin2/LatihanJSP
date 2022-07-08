@@ -4,8 +4,8 @@
     Author     : User
 --%>
 
-<%@page import="Controller.ProductController"%>
 <%@page import="java.sql.ResultSet"%>
+<%@page import="Controller.ProductController"%>
 <%--<%@ taglib prefix="c" uri="http://java.sun/com/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
         <!-- Begin page content -->
         <main class="flex-shrink-0">
             <div class="container">
-                <h1 class="mt-5">Halaman Utama</h1>
+                <h1 class="mt-5">Sticky footer with fixed navbar</h1>
                 <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
                 <div class="row pt-5">
                     <div class="col-6">
@@ -75,11 +75,11 @@
                                 <tr>
                                     <td><%= rs.getString("id")%></td>
                                     <td><%= rs.getString("name")%></td>
-                                    <td><%= rs.getString("product_type")%></td>
+                                    <td><%= rs.getString(8)%></td>
                                     <td><%= rs.getString("stock")%></td>
                                     <td>
                                         <form action="delete?id=<%= rs.getString("id") %>" method="POST"
-                                              onsubmit="return confirm('Apakah Anda Yakin Delete Data?')"
+                                              onsubmit="return confirm('Are you sure want to delete the data?')"
                                         >
                                             <a href="edit?id=<%= rs.getString("id") %>" class="btn btn-sm btn-info">Edit</a>
                                             <input type="hidden" name="id" value="<%= rs.getString("id")%>" />
