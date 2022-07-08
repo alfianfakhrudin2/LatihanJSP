@@ -4,15 +4,13 @@
  * and open the template in the editor.
  */
 package Controller;
-
 import Config.DBConnection;
 import com.sun.rowset.CachedRowSetImpl;
 import java.sql.*;
 import java.util.Map;
-
 /**
  *
- * @author Hudya
+ * @author User
  */
 public class BaseController {
     DBConnection koneksi = new DBConnection();
