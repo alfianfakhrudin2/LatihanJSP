@@ -33,15 +33,15 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            DBConnection conn = new DBConnection();
+             DBConnection conn = new DBConnection();
             System.out.println(conn.open());
-            
             /* TODO output your page here. You may use following sample code. */
             RequestDispatcher dispatch = request.getRequestDispatcher("/views/index.jsp");
             dispatch.forward(request, response);
         }
     }
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -79,4 +79,5 @@ public class IndexServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }
