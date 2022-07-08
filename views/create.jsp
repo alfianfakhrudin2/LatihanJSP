@@ -3,14 +3,7 @@
     Created on : Jul 3, 2022, 8:04:28 PM
     Author     : User
 --%>
-
-<%-- 
-    Document   : create
-    Created on : Jun 29, 2022, 10:59:12 PM
-    Author     : Hudya
---%>
-
-<%@page import="Controller.ProductController"%>
+<%@page import="Controller.ProductTypeController"%>
 <%@page import="java.sql.ResultSet"%>
 <%--<%@ taglib prefix="c" uri="http://java.sun/com/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -32,6 +25,11 @@
     <body class="d-flex flex-column h-100">
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
 
+        <%
+            ProductTypeController ptc = new ProductTypeController();
+            ResultSet rs = ptc.get();
+        %>
+        
         <!-- Begin page content -->
         <main class="flex-shrink-0">
             <div class="container">
@@ -47,10 +45,9 @@
                             <div class="mb-3">
                                 <label class="form-label">Jenis Produk</label>
                                 <select class="form-select" aria-label="Default select example" name="type" required>
-                                    <option value="Alat Mandi">Alat Mandi</option>
-                                    <option value="Alat Bersih-bersih">Alat Bersih-bersih</option>
-                                    <option value="Alat Makan">Alat Makan</option>
-                                    <option value="Makanan">Makanan</option>
+                                    <% while(rs.next()) { %>
+                                        <option value="<%= rs.getString("id") %>"><%= rs.getString("name") %></option>
+                                    <% } %>
                                 </select>
                             </div>
                             <div class="mb-3">
