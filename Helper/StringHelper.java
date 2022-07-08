@@ -7,13 +7,13 @@ package Helper;
 
 /**
  *
- * @author Hudya
+ * @author User
  */
 public class StringHelper {
-    public static String parseLikeQuery(String query) {
+     public static String parseLikeQuery(String query) {
         return "%" + query + "%";
     }
-    public static String modifyDateIntoDatepicker(String expired) {
+     public static String modifyDateIntoDatepicker(String expired) {
         String[] splitted = expired.split("-");
         expired = splitted[1] + "/" + splitted[2] + "/" +  splitted[0] ;
         
