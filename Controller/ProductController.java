@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Controller;
-
 import Helper.StringHelper;
 import Model.ProductModel;
 import Query.ProductQuery;
@@ -12,13 +11,11 @@ import java.sql.ResultSet;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  *
- * @author Hudya
+ * @author User
  */
-public class ProductController extends BaseController {
-    
+public class ProductController extends BaseController{
     ProductQuery query = new ProductQuery();
     
     public ResultSet get() {
