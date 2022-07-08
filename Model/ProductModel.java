@@ -7,10 +7,9 @@ package Model;
 
 /**
  *
- * @author Hudya
+ * @author User
  */
 public class ProductModel {
-       
     private String name;
     private String type;
     private String stock;
@@ -20,7 +19,7 @@ public class ProductModel {
     public void setExpired(String expired) {
         String[] splitted = expired.split("/");
         expired = splitted[2] + "-" + splitted[0] + "-" + splitted[1];
-   
+        
         this.expired = expired;
     }
 
@@ -58,5 +57,5 @@ public class ProductModel {
 
     public String getType() {
         return type;
-    } 
+    }
 }
