@@ -8,25 +8,24 @@
 <%@page import="java.sql.ResultSet"%>
 <%--<%@ taglib prefix="c" uri="http://java.sun/com/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
     <head>
         <jsp:include page='layouts/head.jsp'>
-            <jsp:param name="title" value="Homepage"/>
+            <jsp:param name="title" value="Homepage" />
         </jsp:include>
         <style>
-            .input-group-append{
-                cursor:pointer;
+            .input-group-append {
+                cursor: pointer;
             }
         </style>
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css"> 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit Page</title>
+
     </head>
     <body class="d-flex flex-column h-100">
         <jsp:include page='layouts/navbar.jsp'></jsp:include>
+
         <%
             String id = request.getParameter("id");
             if (id == null || id.equals("")) {
@@ -43,8 +42,9 @@
             }
             
         %>
+
         <% while(rs.next()) { %>
-        <!--page content-->
+        <!-- Begin page content -->
         <main class="flex-shrink-0">
             <div class="container">
                 <h1 class="mt-5">Edit Produk - <%= rs.getString("name") %></h1>
@@ -120,7 +120,7 @@
                 formatter: (input, date, instance) => {
                     input.value = date.toLocaleDateString(); // => '1/1/2099'
                 }
-            });
+            })
         </script>
 
     </body>
