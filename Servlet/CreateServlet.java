@@ -100,5 +100,4 @@ public class CreateServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
