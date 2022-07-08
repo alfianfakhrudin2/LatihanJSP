@@ -10,11 +10,13 @@ package Query;
 
 /**
  *
- * @author Hudya
+ * @author User
  */
 public class ProductQuery {
-    public String get = "SELECT * FROM product";
-    public String create = "INSERT INTO product (name, product_type, " + 
+    public String get = "SELECT product.*,pt.name as product_type_name "
+            + "FROM product INNER JOIN product_type pt "
+            + "ON pt.id = product.product_type_id";
+public String create = "INSERT INTO product (name, product_type_id, " + 
             "stock, price, expired) VALUES (?, ?, ?, ?, ?)";
     public String getByName = "SELECT * FROM product where name LIKE ?";
     public String getById = "SELECT * FROM product where id = ?";   
